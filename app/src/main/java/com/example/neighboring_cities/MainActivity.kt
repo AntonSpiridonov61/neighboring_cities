@@ -27,10 +27,9 @@ class MainActivity : AppCompatActivity() {
         val gson = Gson()
         val cities_data = gson.fromJson(InputStreamReader(cities_stream), Cities::class.java)
         Log.d("mytag", "Loaded movies ${cities_data.cities.size}")
-//        Log.d("mytag", cities_data.cities[3].coord["long"])
         cities = cities_data.cities
         val arrNameCity = Array(cities.size) {""}
-        for (i in 0..(cities.size - 1)) {
+        for (i in 0 until cities.size - 1) {
             Log.d("mytag", i.toString())
             arrNameCity[i] = cities[i].name
         }
@@ -51,7 +50,6 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(applicationContext, CityActivity::class.java)
         intent.putExtra("distance", distance)
         intent.putExtra("city", selectCity.toInt())
-//        intent.putExtra("cities", cities)
         startActivity(intent)
     }
 }

@@ -4,6 +4,6 @@ data class City(val id: Int,
                 val name: String,
                 val state: String,
                 val country: String,
-                val coord: HashMap<String, Double>) {
+                val coord: Location) {
 
 }
